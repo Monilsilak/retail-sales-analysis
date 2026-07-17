@@ -1,45 +1,12 @@
-"""
-sales_analysis.py
-------------------
-PROJECT: Retail Sales Data Analysis
-LEVEL: Beginner
 
-WHAT THIS SCRIPT DOES:
-1. Loads the retail sales data (retail_sales_data.csv)
-2. Cleans it a little (checks for missing values, fixes data types)
-3. Answers common business questions using pandas:
-     - Which region makes the most sales?
-     - Which product category is most profitable?
-     - What is the monthly sales trend?
-     - Who are the top 10 customers?
-     - Which payment mode is most used?
-4. Saves 5 charts (as .png images) into the "charts" folder
-5. Prints a short summary to the screen
-
-HOW TO RUN THIS (if you want to run it yourself):
-1. Install the required libraries (only needed once):
-     pip install pandas matplotlib
-2. Open a terminal in this "python_analysis" folder
-3. Run:
-     python sales_analysis.py
-4. Check the "charts" folder for the images it creates
-
-You do NOT have to run this again for your resume/interview - the charts
-are already generated for you. But you should read through the code and
-understand what each part does, since interviewers may ask you about it.
-"""
 
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# ---------------------------------------------------------
-# STEP 1: LOAD THE DATA
-# ---------------------------------------------------------
-# "../data/retail_sales_data.csv" means: go one folder up, then into "data"
+
 df = pd.read_csv("../data/retail_sales_data.csv")
 
-# Convert the OrderDate column from plain text into an actual date type
-# so we can do date-based analysis (like "sales per month")
+
 df["OrderDate"] = pd.to_datetime(df["OrderDate"])
 df["Month"] = df["OrderDate"].dt.strftime("%Y-%m")
 
@@ -51,13 +18,12 @@ print()
 # ---------------------------------------------------------
 # STEP 2: BASIC DATA CLEANING / CHECKS
 # ---------------------------------------------------------
-# Check if any column has missing (empty) values
+
 missing_values = df.isnull().sum()
 print("STEP 2: Checking for missing values")
 print(missing_values)
 print()
-# In this dataset there shouldn't be any missing values, but checking is
-# good practice and interviewers love to hear you always check this.
+
 
 # ---------------------------------------------------------
 # STEP 3: BUSINESS QUESTION 1 - Sales by Region
