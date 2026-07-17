@@ -1,11 +1,4 @@
-"""
-generate_data.py
------------------
-This script creates a fake (but realistic) retail sales dataset.
-You don't need to run this yourself - the CSV is already generated for you
-as retail_sales_data.csv. This file is only here so you understand where
-the data came from, and could regenerate it if you wanted.
-"""
+
 import pandas as pd
 import numpy as np
 import random
