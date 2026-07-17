@@ -2,15 +2,7 @@
 -- PROJECT: Retail Sales Data Analysis
 -- FILE: queries.sql
 -- TOOL: MySQL Workbench
--- =========================================================
--- HOW TO USE THIS FILE:
--- 1. Open MySQL Workbench
--- 2. Connect to your local MySQL server (localhost)
--- 3. Open this file: File > Open SQL Script > queries.sql
--- 4. Run the statements one section at a time (click the
---    lightning bolt icon, or select a section and press
---    Ctrl+Enter / Cmd+Enter)
--- =========================================================
+
 
 
 -- ---------------------------------------------------------
@@ -37,34 +29,7 @@ CREATE TABLE IF NOT EXISTS sales (
 );
 
 
--- ---------------------------------------------------------
--- SECTION 2: LOAD THE CSV DATA INTO THE TABLE
--- ---------------------------------------------------------
--- OPTION A (Easiest for beginners): Use the MySQL Workbench
--- "Table Data Import Wizard":
---   1. In the left sidebar, right-click "Tables" under retail_sales_db
---   2. Choose "Table Data Import Wizard"
---   3. Select the file: data/retail_sales_data.csv
---   4. Choose "Use existing table" -> sales
---   5. Click Next through the steps and Finish
---
--- OPTION B: Use LOAD DATA (only works if local_infile is enabled
--- and you know the exact file path on your computer):
---
--- LOAD DATA LOCAL INFILE '/full/path/to/retail_sales_data.csv'
--- INTO TABLE sales
--- FIELDS TERMINATED BY ','
--- OPTIONALLY ENCLOSED BY '"'
--- LINES TERMINATED BY '\n'
--- IGNORE 1 ROWS;
---
--- (If this gives a "local_infile" error, use Option A instead -
--- it's simpler and works the same for a beginner project.)
 
-
--- ---------------------------------------------------------
--- SECTION 3: BASIC CHECKS
--- ---------------------------------------------------------
 -- Check the data loaded correctly
 SELECT * FROM sales LIMIT 10;
 
@@ -72,9 +37,7 @@ SELECT * FROM sales LIMIT 10;
 SELECT COUNT(*) AS total_orders FROM sales;
 
 
--- ---------------------------------------------------------
--- SECTION 4: BUSINESS QUESTIONS (the actual "analysis")
--- ---------------------------------------------------------
+
 
 -- Q1. What is the total sales and profit for each region?
 SELECT
@@ -171,9 +134,4 @@ GROUP BY Region, Category
 ORDER BY total_sales DESC
 LIMIT 10;
 
--- =========================================================
--- END OF FILE
--- Tip for your resume/interview: be ready to explain what
--- GROUP BY, ORDER BY, SUM, AVG, and subqueries do in plain
--- English. That matters more than memorizing every query.
--- =========================================================
+
